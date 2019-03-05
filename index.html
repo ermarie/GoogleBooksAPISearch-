@@ -1,4 +1,3 @@
-<!doctype html>
 
 <html>
 <head>
@@ -7,21 +6,19 @@
     <title></title>
     <link rel="stylesheet" href="styles.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>    
-    <script src="Wikipedia Viewer.js"></script>
+    <script src="main.js"></script>
+    <script src="https://apis.google.com/js/api.js"></script>
 </head>
 <body>
   <div class="container">
 <form>
-<input id="searchField" class="input" type="text" placeholder="Search Wikipedia" name="input">
+<input id="searchField" class="input" type="search" placeholder="Search Google Books" name="input" spellcheck="true">
 <button id="submitButton" class="submitButton" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
-  
-  <a href="https://en.wikipedia.org/wiki/Special:random" id='randomButton' target='_blank'><button class="randomButton" type="button">Random</button></a>
-  </div>
-</form>
+      </form>
+      </div>
+    
   
   <ul id="response">
           </ul>
 </body>
 </html>
-
-
