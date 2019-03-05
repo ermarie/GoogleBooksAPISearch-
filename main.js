@@ -1,15 +1,17 @@
 $(document).ready(function () {
     'use strict';
     
-   // document.getElementById("#searchField").setAttribute(‘disabled’, false);
+   //document.getElementById("searchField").setAttribute(‘disabled’, false);
     
    function fetchData() {
+       
+        $('#response').empty();
          
         var searchField = $('#searchField').val();
          
-        if (searchField === "") {
-            alert("Please enter something in the field first.");
-        } else {
+        //if (searchField === "") {
+        //    alert("Please enter something in the field first.");
+       // } else {
             var responsesObj = {};
             var title = "";
             var author = "";
@@ -47,17 +49,19 @@ $(document).ready(function () {
                 }
                 
             })
-        }
-    };
+       // }
+    }
   
   //run fetchData() when Submit button is clicked
-  $("#submitButton").click(fetchData);
+  $("#submitButton").on('click', function (e) {
+      fetchData()
+  } )
+    
   //"click" submit button if user presses Enter
-    $('#searchField').keypress(function (e) {
+    $('#searchField').on('keypress', function (e) {
         if (e.which === 13) {
-            $('#submitButton').click();
-            return false;
-            }
+            $('#submitButton').click(fetchData);
         return false;
+        } 
     })
 })
